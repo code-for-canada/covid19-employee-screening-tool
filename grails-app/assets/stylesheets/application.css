@@ -1,0 +1,44 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require bootstrap
+*= require adminlte
+*= require bootstrap-select
+*= require bootstrap4-toggle
+*= require datatables
+*= require_self
+*/
+
+.form-group.row {
+    margin-bottom: 10px;
+}
+
+table a.icon-clickable {
+    display: none;
+}
+
+table td:hover a.icon-clickable {
+    display: inline;
+}
+
+.icon-clickable, .js-change-availability {
+    cursor: pointer;
+}
+
+.show-pointer {
+    cursor: pointer;
+}
+
+.bg-gradient-light-yellow {
+    background: #ffeeba linear-gradient(180deg, #ffe8a1, #ffe8a1) repeat-x !important;
+}
+
+div.dt-buttons {
+    margin-left: 1em;
+}

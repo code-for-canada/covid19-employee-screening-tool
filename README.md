@@ -8,6 +8,10 @@ A tool for screening employees when entering and leaving a location.  Some of th
 * Administrators can add notes to a screening entry (e.g. to indicate there was follow-up on flagged entries)
 * Screening entries can be exported to Excel for review
 
+![Screenshot 1][screen1]
+![Screenshot 2][screen2]
+![Screenshot 3][screen3]
+
 
 
 ## Setting up
@@ -110,3 +114,8 @@ Please note that this project is released with a [Contributor Code of Conduct](C
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+[screen1]: screenshot1.png "Screenshot 1"
+[screen2]: screenshot2.png "Screenshot 2"
+[screen3]: screenshot3.png "Screenshot 3"

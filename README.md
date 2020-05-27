@@ -57,6 +57,8 @@ When the application is run without LDAP, two user accounts are automatically cr
 | admin | admin | ROLE_COVID_ADMINISTRATORS | Employee management, screening reports |
 | screener | screener | ROLE_COVID_SCREENERS | Can perform screening only |
 
+You will also need to set `usesLdap` to `false` in `/grails-app/conf/application.yml` for this to work. 
+
 You can modify the default users in `/grails-app/init/convid/Bootstrap.groovy`.
 
 

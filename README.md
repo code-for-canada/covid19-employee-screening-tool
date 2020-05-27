@@ -9,10 +9,10 @@ A tool for screening employees when entering and leaving a location.  Some of th
 * Screening entries can be exported to Excel for review
 
 ![Screenshot 1][screen1]
+
 ![Screenshot 2][screen2]
+
 ![Screenshot 3][screen3]
-
-
 
 ## Setting up
 

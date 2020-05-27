@@ -24,7 +24,7 @@ class BootStrap {
                 }
             }
 
-            //Test data
+            // if not using LDAP, create users
             if (!Environment.usingLdap) {
                 UserAccount.withTransaction { status ->
                     UserAccount.withSession {

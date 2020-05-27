@@ -80,7 +80,7 @@
                                     <i class="nav-icon fas fa-tools"></i>
                                     <p>
                                         Administration
-                                        <i class="fas fa-angle-left right"></i>
+                                        <i class="fas fa-angle-right right"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview" role="list">

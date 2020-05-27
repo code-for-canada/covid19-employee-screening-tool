@@ -50,12 +50,14 @@ Grails application running at http://localhost:8080 in environment: development
 
 This application was designed to use a connection to an LDAP server for authentication and authorization.  This is currently disabled but can enabled and configured in `/grails-app/conf/application.yml`.
 
-When the application is run in development mode, two user accounts are automatically created.  
+When the application is run without LDAP, two user accounts are automatically created.  
 
 | Username | Password | Role | Description |
 | -------- | -------- | ---- | ----------- |
 | admin | admin | ROLE_COVID_ADMINISTRATORS | Employee management, screening reports |
 | screener | screener | ROLE_COVID_SCREENERS | Can perform screening only |
+
+You can modify the default users in `/grails-app/init/convid/Bootstrap.groovy`.
 
 
 ## Deployment

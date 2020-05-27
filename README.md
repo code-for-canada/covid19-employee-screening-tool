@@ -91,15 +91,19 @@ runtime "org.postgresql:postgresql:42.1.4"
 * [Gradle](https://gradle.org) - Build Tool
 * [Bootstrap](https://getbootstrap.com/) - CSS framework
 
-## Getting Help or Reporting an Issue
 
-To report bugs/issues/features requests, please file an [issue](https://github.com/bcgov/nr-get-token/issues).
 
-## How to Contribute
+## Credits
 
-If you would like to contribute, please see our [contributing](CONTRIBUTING.md) guidelines.
+This tool was initially developed by Neil Ecker ([@NeilEcker](https://github.com/NeilEcker)) at County of Grey, Ontario, Canada.
 
-Please note that this project is released with a [Contributor Code of Conduct](CODE-OF-CONDUCT.md). By participating in this project you agree to abide by its terms.
+It was reviewed and prepared for sharing by Brett Tackaberry ([@tackaberry](https://github.com/tackaberry)), with support through the [Open Call](https://opencall-appelouvert.alpha.canada.ca/) initiative.
+
+
+## Updates and status
+
+The public version was forked from a private repo, so that it can be reused by others. No updates are expected, and we're not able to provide any support.
+
 
 ## License
 

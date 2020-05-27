@@ -158,3 +158,6 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+---
+# Custom configuration properties
+usingLdap: false # If false, adds default users specified in Boostrap.groovy

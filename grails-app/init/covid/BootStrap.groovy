@@ -1,8 +1,13 @@
 package covid
 
 import grails.util.Environment
+import org.springframework.beans.factory.annotation.Value
 
 class BootStrap {
+
+    // from application.yml or environment, default value is false
+    @Value('${usingLdap: false}')
+    boolean usingLdap
 
     def init = { servletContext ->
 
@@ -25,29 +30,12 @@ class BootStrap {
             }
 
             // if not using LDAP, create users
-            if (!Environment.usingLdap) {
-                UserAccount.withTransaction { status ->
-                    UserAccount.withSession {
-                        def adminRole = new Role(authority: 'ROLE_COVID_ADMINISTRATORS').save()
-                        def screenerRole = new Role(authority: 'ROLE_COVID_SCREENERS').save()
-
-                        def admin = new UserAccount(username: 'admin', password: 'admin').save()
-                        UserAccountRole.create admin, adminRole
-
-                        def screener = new UserAccount(username: 'screener', password: 'screener').save()
-                        UserAccountRole.create screener, screenerRole
-
-                        UserAccountRole.withSession {
-                            it.flush()
-                            it.clear()
-                        }
-                    }
-                }
+            if (!usingLdap) {
+                createDefaultUsers()
             }
 
             //Test data
             if (Environment.current == Environment.DEVELOPMENT) {
-
 
                 Employee employee = new Employee(
                         firstName: 'First',
@@ -71,5 +59,31 @@ class BootStrap {
         }
     }
     def destroy = {
+    }
+
+    /**
+     * Create default roles and users if none exist in the database
+     * @return
+     */
+    def createDefaultUsers() {
+        if (UserAccount.list().size == 0) {
+            UserAccount.withTransaction { status ->
+                UserAccount.withSession {
+                    def adminRole = new Role(authority: 'ROLE_COVID_ADMINISTRATORS').save()
+                    def screenerRole = new Role(authority: 'ROLE_COVID_SCREENERS').save()
+
+                    def admin = new UserAccount(username: 'admin', password: 'admin').save()
+                    UserAccountRole.create admin, adminRole
+
+                    def screener = new UserAccount(username: 'screener', password: 'screener').save()
+                    UserAccountRole.create screener, screenerRole
+
+                    UserAccountRole.withSession {
+                        it.flush()
+                        it.clear()
+                    }
+                }
+            }
+        }
     }
 }

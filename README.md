@@ -48,7 +48,7 @@ Grails application running at http://localhost:8080 in environment: development
 
 ## Authentication and Authorization 
 
-This application was designed to use a connection to an LDAP server for authentication and authorization.  This is currently disabled but can enabled and configured in `/grails-app/conf/application.yml`.
+This application was designed to use a connection to an LDAP server for authentication and authorization.  This is currently disabled but can be enabled and configured in `/grails-app/conf/application.yml`.
 
 When the application is run without LDAP, two user accounts are automatically created.  
 

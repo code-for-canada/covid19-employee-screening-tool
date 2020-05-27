@@ -10,3 +10,8 @@ out/
 .project
 .settings
 .classpath
+
+# from vargant
+Vagrantfile
+.vagrant
+ubuntu-bionic*.log

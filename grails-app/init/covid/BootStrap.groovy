@@ -24,18 +24,17 @@ class BootStrap {
                 }
             }
 
-            //Test data
-            if (Environment.current == Environment.DEVELOPMENT) {
-
+            // if not using LDAP, create users
+            if (!Environment.usingLdap) {
                 UserAccount.withTransaction { status ->
                     UserAccount.withSession {
                         def adminRole = new Role(authority: 'ROLE_COVID_ADMINISTRATORS').save()
                         def screenerRole = new Role(authority: 'ROLE_COVID_SCREENERS').save()
 
                         def admin = new UserAccount(username: 'admin', password: 'admin').save()
-                        def screener = new UserAccount(username: 'screener', password: 'screener').save()
-
                         UserAccountRole.create admin, adminRole
+
+                        def screener = new UserAccount(username: 'screener', password: 'screener').save()
                         UserAccountRole.create screener, screenerRole
 
                         UserAccountRole.withSession {
@@ -44,6 +43,11 @@ class BootStrap {
                         }
                     }
                 }
+            }
+
+            //Test data
+            if (Environment.current == Environment.DEVELOPMENT) {
+
 
                 Employee employee = new Employee(
                         firstName: 'First',
